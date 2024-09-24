@@ -1,0 +1,65 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "N1ght GUI", HidePremium = false, SaveConfig = true, ConfigFolder = "NightGui"})
+
+
+--Zmienne/Values
+
+
+
+--Funkcje
+
+
+    
+
+
+
+local SkryptyTab = Window:MakeTab({
+	Name = "Skrypty",
+	Icon = "rbxassetid://6239921200",
+	PremiumOnly = false
+})
+
+SkryptyTab:AddButton({
+	Name = "Infinity yield",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+--Zakonczenie skryptytab!
+--Otworzenie gracztab
+
+local GraczTab = Window:MakeTab({
+	Name = "Gracz",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+GraczTab:AddButton({
+	Name = "ESP",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+  	end    
+})
+
+
+GraczTab:AddSlider({
+	Name = "Szybkosc",
+	Min = 1,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Szybkosc (domyslna 16)",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+
+
+
+
+
+OrionLib:Init()
